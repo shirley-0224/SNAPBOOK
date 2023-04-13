@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNAP BOOK | SETTINGS</title>
+    <link rel="stylesheet" href="{% static './style/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+    .settings-container{
+        position: relative;
+        top:-20px;
+       overflow: hidden;
+       
+    }
+</style>
+<body>
+    <h2 class="profile-main-head settings-head"><a href="/">home </a> / <a href="#">{{user.username}}</a> </h2>
+    <div class="login-container settings-container">
+        <div class="box">
+            <h1 class="login-head main-title">SNAPBOOK</h1>
+            <form class="login-form" style="padding:0" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="login-input profile-input">
+                    <img height="100px" width="100px" src="{{user_profile.profileimg.url}}"/>
+                    <div class="current-img">
+                    </div>
+                    <div class="new-profile">
+                        <p>upload your new profile image</p>
+                        <input name="image" type="file" placeholder="enter here...">
+                    </div>
+                </div>
+                <div class="login-input" style="padding: 0;">
+    
+                    <p>Bio</p>
+                    <textarea name="bio" style="padding: 0 1rem " name="" id="" cols="30" rows="5" placeholder="your bio here...">{{user_profile.bio}}</textarea>
+                    
+                </div>
+                <div class="login-input">
+                    <p>Location</p>
+                    <input name="location" type="text" value="{{user_profile.location}}">
+                </div>
+    <div class="profile-btns">
+
+        <button class="btn submit-btn" type="submit">save</button>
+         <button class="btn submit-btn"><a style="color:#16e2f5; text-decoration: none;" href="/">cancel</a></button>
+    </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

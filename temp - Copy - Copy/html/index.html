@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>SNAPBOOK</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="head">
+                <h1 class="main-title">SNAP BOOK</h1>
+                
+            </div>
+
+
+            <div class="head-container">
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="search for users...">
+                    <!-- <input type="submit" class="btn fa fa-search " value=""> -->
+                    <button type="submit" class="btn fa fa-search"></button>
+                </div>
+            </div>
+                
+            
+
+            <div class="head-btns">
+                <button id="create-post-btn" class="btn"><a style="text-decoration: none; color: #16e2f5;" href="new-post.html">POST</a></button>
+                <div class="fa fa-power-off btn"></div>
+                <div class="profile">
+                    <button id=" profile-btn" class="btn"> <a style="text-decoration: none; color: #16e2f5;" href="settings.html">SETTINGS</a></button>
+                    <img src="../img/img1.avif" class="profile-img" alt="">
+                </div>
+            </div>
+
+            
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <div class="card">
+            <div class="card-head">@username</div>
+            <img class="card-img" src="../img/img1.avif" alt="">
+            <div class="end-tags">
+                <div class="card-likes fa fa-heart"></div>
+                <div class="card-caption">Lorem, ipsum dolor.</div>
+            </div>
+        </div>
+        <div class="card" >
+            <div class="card-head">@username</div>
+            <img class = "card-img" src="https://images.unsplash.com/photo-1680868354675-34192a9baae7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80" alt="">
+
+            <div class="end-tags">
+
+                <div class="card-likes fa fa-heart"></div>
+                <div class="card-caption">Lorem, ipsum dolor.</div>
+            </div>
+        </div>
+        <div class="card" data-aos="fade-up"
+        data-aos-duration="2000" data-aos-delay="100">
+            <div class="card-head">@username</div>
+            <img class="card-img" src="https://images.unsplash.com/photo-1680624286784-1c698ddbada1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4N3x8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60" alt="">
+
+            <div class="end-tags">
+
+                <div class="card-likes fa fa-heart"></div>
+                <div class="card-caption">Lorem, ipsum dolor.</div>
+            </div>
+        </div>
+        <div class="card" data-aos="fade-up"
+        data-aos-duration="2000" data-aos-delay="100">
+            <div class="card-head">@username</div>
+            <img class="card-img"  src="https://plus.unsplash.com/premium_photo-1675098651780-2f2b3f8590f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80" alt="">
+
+            <div class="end-tags">
+
+                <div class="card-likes fa fa-heart"></div>
+                <div class="card-caption">Lorem, ipsum dolor.</div>
+            </div>
+        </div>
+        <div class="card" data-aos="fade-up"
+        data-aos-duration="2000" data-aos-delay="10">
+            <div class="card-head">@username</div>
+            <img class="card-img" src="https://images.unsplash.com/photo-1680562725444-5a9aaa12525b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+
+            <div class="end-tags">
+
+                <div class="card-likes fa fa-heart"></div>
+                <div class="card-caption">Lorem, ipsum dolor.</div>
+            </div>
+        </div>
+    </main>
+
+    <section>
+        <h3 class="users-head">Users you can follow</h3>
+        <div class="section-container">
+            <div class="user-details">
+                
+                <p class="username">username</p>
+                <button class="btn btn-profile"type="submit">profile</button>
+            </div>
+            <div class="user-details">
+                
+                <p class="username">username</p>
+                <button class="btn btn-profile" type="submit">profile</button>
+            </div>
+            
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        </script>
+    
+</body>
+</html>

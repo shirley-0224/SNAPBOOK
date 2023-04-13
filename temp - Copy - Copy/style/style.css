@@ -1,0 +1,319 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-color: #101010;
+}
+
+.nav-bar {
+  display: flex;
+  height: 30vh;
+  background-color: #101010;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-title {
+  color: #16e2f5;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(to bottom left, #01f9c6, #16e2f5);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  border: 2px solid #f535aa;
+  padding: 0.5rem 1rem;
+  color: #16e2f5;
+  text-shadow: 1px 1px 2px rgb(2, 130, 128);
+  background-color: transparent;
+  box-shadow: 1px 1px 5px #f535aa;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  color: #f535aa;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 15px #f535aa;
+}
+
+.head-btns {
+  display: flex;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+}
+
+.search-bar {
+  margin: 0rem 1rem;
+}
+
+.profile {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.profile-img {
+  display: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: auto;
+  margin: 0.5rem;
+}
+
+.main-container {
+  color: #f535aa;
+  font-weight: lighter;
+  margin: auto;
+  width: 80%;
+}
+.main-container .card {
+  min-width: 50%;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 0.1fr 5fr 1fr;
+  row-gap: 0.5rem;
+  border: 1px solid #16e2f5;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 1px 2px 5px #16e2f5;
+  transition: all 0.5s;
+}
+.main-container .card .card-head {
+  font-weight: bold;
+}
+.main-container .card .card-img {
+  width: 100%;
+  height: 50vh;
+  border-radius: 2px;
+}
+.main-container .card:hover {
+  box-shadow: 1px 2px 15px #16e2f5;
+}
+
+section {
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  position: fixed;
+  flex-direction: column;
+  color: #16e2f5;
+  width: 25%;
+  background-color: transparent;
+  border: 2px solid #0affff;
+  box-shadow: inset 1px 1px 10px black;
+}
+section .btn-profile {
+  padding: 0.2rem 0.5rem;
+}
+section .users-head {
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+section .user-details {
+  display: flex;
+  font-weight: lighter;
+  justify-content: space-around;
+  padding: 0.35rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 900px) {
+  .main-container {
+    width: 80%;
+  }
+  .card {
+    width: 60%;
+  }
+  .nav-bar {
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-between;
+    height: 15vh;
+    margin-bottom: 2rem;
+  }
+  .main-title {
+    font-size: 3rem;
+  }
+  .btn-profile {
+    margin-right: 0.5rem;
+  }
+  .head-btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .users-head {
+    font-size: 5rem;
+    margin: auto;
+  }
+  section {
+    width: 15%;
+  }
+  .profile-img {
+    display: block;
+  }
+  .profile {
+    justify-content: center;
+    align-items: center;
+  }
+  .fa-power-off {
+    margin-right: 1rem;
+  }
+}
+.login-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  color: #f535aa;
+  overflow: hidden;
+}
+
+.box {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 1px 1px 5px #f535aa;
+  border: 2px solid #f535aa;
+  transition: all 0.5s ease-in-out;
+}
+.box p a {
+  color: #0affff;
+}
+
+.box:hover {
+  box-shadow: 1px 1px 10px #f535aa;
+}
+
+.login-form {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-form .login-input {
+  margin: 0.5rem;
+}
+.login-form .login-input input {
+  padding: 0.5rem 1rem;
+}
+.login-form .login-input p {
+  margin-bottom: 0.25rem;
+}
+.login-form .submit-btn {
+  margin-top: 1rem;
+}
+
+.profile-main-head {
+  color: #f535aa;
+  margin: 1rem;
+}
+.profile-main-head a {
+  color: #0affff;
+  text-decoration: none;
+}
+
+.profile-main {
+  width: 60%;
+  margin: auto;
+  color: #f535aa;
+  border-bottom: 2px solid #01f9c6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.profile-main .profile-container {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.profile-main .profile-container .profile-picture img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.profile-main .profile-container .followers-and-posts {
+  display: flex;
+}
+.profile-main .profile-container .followers-and-posts .chunk {
+  padding: 1rem;
+}
+.profile-main .profile-container .followers-and-posts .chunk .count-desc {
+  color: #0affff;
+}
+.profile-main .bio {
+  font-size: 0.85rem;
+  padding: 1rem;
+}
+
+.posts-on-profile {
+  color: #0affff;
+  width: 80%;
+  margin: auto;
+  border: 2px solid #0affff;
+}
+.posts-on-profile .posts-on-profile-container {
+  margin: 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+.posts-on-profile .posts-on-profile-container img {
+  padding: 0.1rem;
+  max-height: 150px;
+  max-width: 200px;
+}
+
+.profile-input {
+  display: flex;
+}
+.profile-input .new-profile {
+  padding: 1rem;
+}
+
+.current-profile-img {
+  padding: 1rem;
+  height: 100px;
+  width: 100px;
+}
+
+.result-container {
+  display: flex;
+  width: 100%;
+  font-weight: lighter;
+  border: 2px solid #0affff;
+}
+.result-container .result-box {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+.result-container .result-box img, .result-container .result-box .result-contents {
+  padding: 1rem;
+  height: 100px;
+  width: 100px;
+}/*# sourceMappingURL=style.css.map */

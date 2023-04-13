@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './style/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>SNAPBOOK</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="head">
+                <h1 class="main-title">SNAP BOOK</h1>
+                
+            </div>
+
+
+            <div class="head-container">
+                <form action="/search" method="POST">
+                    {% csrf_token %}
+                <div class="search-bar">
+                    <input name="username" type="text" class="search-input" placeholder="search for users...">
+                    <!-- <input type="submit" class="btn fa fa-search " value=""> -->
+                    <a href="search"> <button type="submit" class="btn fa fa-search"></button></a>
+                </div>
+            </form>
+            </div>
+                
+            
+
+            <div class="head-btns">
+                <button id="create-post-btn" class="btn"><a style="text-decoration: none; color: #16e2f5;" href="new-post">POST</a></button>
+                <a href="logout"> <div class="fa fa-power-off btn"></div></a>
+                <div class="profile">
+                    <button id=" profile-btn" class="btn"> <a style="text-decoration: none; color: #16e2f5;" href="settings">SETTINGS</a></button>
+                    <img src="{{user_profile.profileimg.url}}" height="20px"  width="20px"class="profile-img" style="color:white;" alt="img">
+                </div>
+            </div>
+
+            
+        </nav>
+    </header>
+
+    <main class="main-container">
+        {% for post in posts reversed%}
+        <div class="card">
+            <div class="card-head"><a style="color:white;" href="/profile/{{post.user}}">@{{post.user}}</a></div>
+            <a href="{{post.image.url}}"> <img class="card-img" src="{{post.image.url}}" alt=""></a>
+            <div class="end-tags">
+                {% if post.likes == 0 %}
+                <div>No likes</div>
+                {% elif post.likes == 1%}
+                <div>Liked by 1 person</div>
+                {% else %}
+                <div>Liked by {{post.likes}} people</div>
+                {% endif %}
+                 <a style="color:#f535aa;" href="/like_post?post_id={{post.id}}"><div class="card-likes fa fa-heart"></div></a>
+                 <a style="color:#f535aa;" href="{{post.image.url}}" download><div class="fa fa-file-arrow-down"></div></a>
+                <div class="card-caption"> <a href="#" style="color:white; text-decoration: none;"><strong>{{post.user}}</strong></a> {{post.caption}}</div>
+                <div class="card-caption" style="font-size: 10px;">{{post.created_at.date}}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+
+    <section>
+        <h3 class="users-head">Users you can follow</h3>
+        {% for suggestion in suggestions_username_profile_list %}
+        <div class="section-container">
+            <div class="user-details">
+                
+                <a href="/profile/{{suggestion.user}}"> <p class="username">{{suggestion.user}}</p></a>
+                <!-- <button class="btn btn-profile"type="submit"></button> -->
+            </div>
+            
+        </div>
+        {% endfor %}
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        </script>
+    
+</body>
+</html>
